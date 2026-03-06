@@ -1,5 +1,21 @@
 <?php
 
+/*
+INF653 Back End Web Development
+Midterm Project – Quotes REST API
+
+Jose Saumat
+
+File: api/authors/index.php
+
+Description:
+This endpoint handles HTTP requests for author resources.
+
+Supported Methods:
+GET    - Retrieve all authors or a specific author by ID
+POST   - Create a new author
+*/
+
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once "../../config/Database.php";

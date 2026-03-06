@@ -1,5 +1,21 @@
 <?php
 
+/*
+INF653 Back End Web Development
+Midterm Project – Quotes REST API
+
+Jose Saumat
+
+File: api/categories/index.php
+
+Description:
+This endpoint handles HTTP requests for category resources.
+
+Supported Methods:
+GET    - Retrieve all categories or a specific category by ID
+POST   - Create a new category
+*/
+
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once "../../config/Database.php";

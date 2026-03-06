@@ -1,4 +1,19 @@
 <?php
+
+/*
+INF653 Back End Web Development
+Midterm Project – Quotes REST API
+
+Jose Saumat
+
+File: index.php
+
+Description:
+This is the public homepage for the Quotes API. It provides
+basic information about the API and lists available endpoints
+for interacting with quotes, authors, and categories.
+*/
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,20 @@
 <?php
+
+/*
+INF653 Back End Web Development
+Midterm Project – Quotes REST API
+
+Jose Saumat
+
+File: Quote.php
+
+Description:
+This model manages all database operations related to quotes.
+It includes methods to retrieve quotes, filter quotes by
+author or category, create new quotes, update existing quotes,
+and delete quotes from the database.
+*/
+
 class Quote {
   private $conn;
 

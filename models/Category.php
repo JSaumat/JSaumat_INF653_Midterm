@@ -1,5 +1,20 @@
 <?php
 
+/*
+INF653 Back End Web Development
+Midterm Project – Quotes REST API
+
+Jose Saumat
+
+File: Category.php
+
+Description:
+This model handles database operations related to categories.
+It includes methods for retrieving categories, retrieving a
+specific category by ID, checking if a category exists, and
+creating new categories in the database.
+*/
+
 class Category {
 
   private $conn;

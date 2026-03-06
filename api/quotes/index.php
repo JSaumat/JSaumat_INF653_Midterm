@@ -1,5 +1,24 @@
 <?php
 
+/*
+INF653 Back End Web Development
+Midterm Project – Quotes REST API
+
+Jose Saumat
+
+File: api/quotes/index.php
+
+Description:
+This endpoint manages quote resources and supports full CRUD
+operations.
+
+Supported Methods:
+GET    - Retrieve quotes or filter by ID, author, or category
+POST   - Create a new quote
+PUT    - Update an existing quote
+DELETE - Remove a quote from the database
+*/
+
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once "../../config/Database.php";
