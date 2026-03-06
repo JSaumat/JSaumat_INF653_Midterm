@@ -1,8 +1,14 @@
 # Quotes API (Midterm Project)
 
 **Student:** Jose Saumat 
+
 **Course:** INF 653 Back End Web Development  
-**Deployed Homepage:** TBD
+
+**Deployed Homepage:** 
+https://jsaumat-inf653-midterm.onrender.com
+
+**API Root:**
+https://jsaumat-inf653-midterm.onrender.com/api
 
 ## Description
 A PHP OOP REST API that supports CRUD operations for quotes using PostgreSQL.
