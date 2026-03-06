@@ -16,6 +16,16 @@ A PHP OOP REST API that supports CRUD operations for quotes using PostgreSQL.
 ## Base URL
 `/api`
 
+## Live Example
+
+You can test the deployed API directly:
+
+GET https://jsaumat-inf653-midterm.onrender.com/api/quotes/
+
+This will return a JSON array of quotes from the database.
+
+## Endpoints
+
 ## Endpoints
 
 ### Quotes
