@@ -20,7 +20,7 @@ class Database {
 
   public function connect() {
     $host = getenv("HOST");
-    $port = getenv("DB_PORT");
+    $port = getenv("DB_PORT") ?: getenv("PORT");
     $dbname = getenv("DBNAME");
     $username = getenv("USERNAME");
     $password = getenv("PASSWORD");
