@@ -55,22 +55,22 @@ class Category {
   }
 
   public function update($id, $categoryName) {
-  $sql = "UPDATE categories
-          SET category = :category
-          WHERE id = :id
-          RETURNING id, category";
-  $stmt = $this->conn->prepare($sql);
-  $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-  $stmt->bindValue(":category", $categoryName, PDO::PARAM_STR);
-  $stmt->execute();
-  return $stmt->fetch(PDO::FETCH_ASSOC);
+    $sql = "UPDATE categories
+            SET category = :category
+            WHERE id = :id
+            RETURNING id, category";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->bindValue(":category", $categoryName, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
   public function delete($id) {
-  $sql = "DELETE FROM categories WHERE id = :id";
-  $stmt = $this->conn->prepare($sql);
-  $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-  $stmt->execute();
-  return $stmt->rowCount() > 0;
+    $sql = "DELETE FROM categories WHERE id = :id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->rowCount() > 0;
   }
 }

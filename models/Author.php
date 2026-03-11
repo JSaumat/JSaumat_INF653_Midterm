@@ -55,15 +55,15 @@ class Author {
   }
 
   public function update($id, $authorName) {
-  $sql = "UPDATE authors
-          SET author = :author
-          WHERE id = :id
-          RETURNING id, author";
-  $stmt = $this->conn->prepare($sql);
-  $stmt->bindValue(":id", $id, PDO::PARAM_INT);
-  $stmt->bindValue(":author", $authorName, PDO::PARAM_STR);
-  $stmt->execute();
-  return $stmt->fetch(PDO::FETCH_ASSOC);
+    $sql = "UPDATE authors
+            SET author = :author
+            WHERE id = :id
+            RETURNING id, author";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->bindValue(":author", $authorName, PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
   } 
 
   public function delete($id) {
