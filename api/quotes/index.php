@@ -50,10 +50,22 @@ if ($method === "GET") {
   $author_id = isset($_GET["author_id"]) ? (int)$_GET["author_id"] : null;
   $category_id = isset($_GET["category_id"]) ? (int)$_GET["category_id"] : null;
 
+  // If a specific quote id is requested, return a single object
   if ($id !== null && $id > 0) {
     $stmt = $quoteModel->readById($id);
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  } elseif ($author_id !== null || $category_id !== null) {
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) {
+      echo json_encode(["message" => "No Quotes Found"]);
+      exit;
+    }
+
+    echo json_encode($row);
+    exit;
+  }
+
+  // If author/category filters are used, return an array
+  if ($author_id !== null || $category_id !== null) {
     $stmt = $quoteModel->readFiltered($author_id ?: null, $category_id ?: null);
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   } else {
