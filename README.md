@@ -26,8 +26,6 @@ This will return a JSON array of quotes from the database.
 
 ## Endpoints
 
-## Endpoints
-
 ### Quotes
 - GET `/api/quotes/`
 - GET `/api/quotes/?id=1`
@@ -46,12 +44,20 @@ This will return a JSON array of quotes from the database.
 - GET `/api/authors/?id=1`
 - POST `/api/authors/`  
   Body JSON: `{ "author": "Name" }`
+- PUT `/api/authors/`  
+  Body JSON: `{ "id": 1, "author": "Updated Name" }`
+- DELETE `/api/authors/`  
+  Body JSON: `{ "id": 1 }`
 
 ### Categories
 - GET `/api/categories/`
 - GET `/api/categories/?id=1`
 - POST `/api/categories/`  
   Body JSON: `{ "category": "Name" }`
+- PUT `/api/categories/`  
+  Body JSON: `{ "id": 1, "category": "Updated Name" }`
+- DELETE `/api/categories/`  
+  Body JSON: `{ "id": 1 }`
 
 ## Testing
 Use Postman:
