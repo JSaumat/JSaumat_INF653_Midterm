@@ -4,7 +4,7 @@
 INF653 Back End Web Development
 Midterm Project – Quotes REST API
 
-Jose Saumat
+Student: Jose Saumat
 
 File: api/authors/index.php
 
@@ -14,6 +14,8 @@ This endpoint handles HTTP requests for author resources.
 Supported Methods:
 GET    - Retrieve all authors or a specific author by ID
 POST   - Create a new author
+PUT    - Update an existing author
+DELETE - Delete an existing author
 */
 
 header("Access-Control-Allow-Origin: *");
@@ -78,6 +80,55 @@ if ($method === "POST") {
 
   $created = $author->create(trim($data["author"]));
   echo json_encode($created);
+  exit;
+}
+
+// ---------- PUT ----------
+if ($method === "PUT") {
+
+  $data = json_decode(file_get_contents("php://input"), true);
+
+  if (!isset($data["id"]) || !isset($data["author"]) || trim($data["author"]) === "") {
+    echo json_encode(["message" => "Missing Required Parameters"]);
+    exit;
+  }
+
+  $id = (int)$data["id"];
+
+  if (!$author->exists($id)) {
+    echo json_encode(["message" => "author_id Not Found"]);
+    exit;
+  }
+
+  $updated = $author->update($id, trim($data["author"]));
+  echo json_encode($updated);
+  exit;
+}
+
+// ---------- DELETE ----------
+if ($method === "DELETE") {
+
+  $data = json_decode(file_get_contents("php://input"), true);
+
+  if (!isset($data["id"])) {
+    echo json_encode(["message" => "Missing Required Parameters"]);
+    exit;
+  }
+
+  $id = (int)$data["id"];
+
+  if (!$author->exists($id)) {
+    echo json_encode(["message" => "author_id Not Found"]);
+    exit;
+  }
+
+  $ok = $author->delete($id);
+
+  if ($ok) {
+    echo json_encode(["id" => $id]);
+  } else {
+    echo json_encode(["message" => "author_id Not Found"]);
+  }
   exit;
 }
 

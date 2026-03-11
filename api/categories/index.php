@@ -4,7 +4,7 @@
 INF653 Back End Web Development
 Midterm Project – Quotes REST API
 
-Jose Saumat
+Student: Jose Saumat
 
 File: api/categories/index.php
 
@@ -14,6 +14,8 @@ This endpoint handles HTTP requests for category resources.
 Supported Methods:
 GET    - Retrieve all categories or a specific category by ID
 POST   - Create a new category
+PUT    - Update an existing category
+DELETE - Delete an existing category
 */
 
 header("Access-Control-Allow-Origin: *");
@@ -78,6 +80,55 @@ if ($method === "POST") {
 
   $created = $category->create(trim($data["category"]));
   echo json_encode($created);
+  exit;
+}
+
+// ---------- PUT ----------
+if ($method === "PUT") {
+
+  $data = json_decode(file_get_contents("php://input"), true);
+
+  if (!isset($data["id"]) || !isset($data["category"]) || trim($data["category"]) === "") {
+    echo json_encode(["message" => "Missing Required Parameters"]);
+    exit;
+  }
+
+  $id = (int)$data["id"];
+
+  if (!$category->exists($id)) {
+    echo json_encode(["message" => "category_id Not Found"]);
+    exit;
+  }
+
+  $updated = $category->update($id, trim($data["category"]));
+  echo json_encode($updated);
+  exit;
+}
+
+// ---------- DELETE ----------
+if ($method === "DELETE") {
+
+  $data = json_decode(file_get_contents("php://input"), true);
+
+  if (!isset($data["id"])) {
+    echo json_encode(["message" => "Missing Required Parameters"]);
+    exit;
+  }
+
+  $id = (int)$data["id"];
+
+  if (!$category->exists($id)) {
+    echo json_encode(["message" => "category_id Not Found"]);
+    exit;
+  }
+
+  $ok = $category->delete($id);
+
+  if ($ok) {
+    echo json_encode(["id" => $id]);
+  } else {
+    echo json_encode(["message" => "category_id Not Found"]);
+  }
   exit;
 }
 
