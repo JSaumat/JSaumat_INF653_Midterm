@@ -18,10 +18,20 @@ for interacting with quotes, authors, and categories.
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Character encoding ensures proper display of text -->
   <meta charset="UTF-8" />
+
+  <!-- Makes the page responsive on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Title displayed in the browser tab -->
   <title>Quotes API</title>
+
+  <!-- Basic styling for the documentation page -->
   <style>
+
+    /* Style the page layout and typography */
     body {
       font-family: Arial, sans-serif;
       max-width: 900px;
@@ -29,29 +39,42 @@ for interacting with quotes, authors, and categories.
       padding: 0 16px;
       line-height: 1.6;
     }
+
+    /* Style inline code blocks */
     code {
       background: #f4f4f4;
       padding: 2px 6px;
       border-radius: 4px;
     }
+
+    /* Improve spacing between list items */
     ul {
       line-height: 1.8;
     }
+
+    /* Style hyperlinks */
     a {
       color: #0066cc;
       text-decoration: none;
     }
+
+    /* Add underline effect when hovering over links */
     a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
+
+  <!-- Main heading for the API documentation page -->
   <h1>Quotes API (Midterm Project)</h1>
 
+  <!-- Student and course information -->
   <p><strong>Student:</strong> Jose Saumat</p>
   <p><strong>Course:</strong> INF 653 Back End Web Development</p>
 
+  <!-- Section displaying the deployed website URL -->
   <h2>Deployed Homepage</h2>
   <p>
     <a href="https://jsaumat-inf653-midterm.onrender.com">
@@ -59,6 +82,7 @@ for interacting with quotes, authors, and categories.
     </a>
   </p>
 
+  <!-- Section showing the root endpoint of the API -->
   <h2>API Root</h2>
   <p>
     <a href="https://jsaumat-inf653-midterm.onrender.com/api">
@@ -66,14 +90,17 @@ for interacting with quotes, authors, and categories.
     </a>
   </p>
 
+  <!-- Brief description of what the API does -->
   <h2>Description</h2>
   <p>
     A PHP OOP REST API that supports CRUD operations for quotes using PostgreSQL.
   </p>
 
+  <!-- Base URL used for all API endpoints -->
   <h2>Base URL</h2>
   <p><code>/api</code></p>
 
+  <!-- Example showing how to test the API -->
   <h2>Live Example</h2>
   <p>You can test the deployed API directly:</p>
   <p>
@@ -81,10 +108,14 @@ for interacting with quotes, authors, and categories.
       GET https://jsaumat-inf653-midterm.onrender.com/api/quotes/
     </a>
   </p>
+
+  <!-- Explanation of what the example request returns -->
   <p>This request returns a JSON array of quotes from the database.</p>
 
+  <!-- Section listing all available API endpoints -->
   <h2>Endpoints</h2>
 
+  <!-- Quote-related endpoints -->
   <h3>Quotes</h3>
   <ul>
     <li><code>GET /api/quotes/</code></li>
@@ -97,6 +128,7 @@ for interacting with quotes, authors, and categories.
     <li><code>DELETE /api/quotes/</code> (JSON: id)</li>
   </ul>
 
+  <!-- Author-related endpoints -->
   <h3>Authors</h3>
   <ul>
     <li><code>GET /api/authors/</code></li>
@@ -106,6 +138,7 @@ for interacting with quotes, authors, and categories.
     <li><code>DELETE /api/authors/</code> (JSON: id)</li>
   </ul>
 
+  <!-- Category-related endpoints -->
   <h3>Categories</h3>
   <ul>
     <li><code>GET /api/categories/</code></li>
@@ -115,7 +148,11 @@ for interacting with quotes, authors, and categories.
     <li><code>DELETE /api/categories/</code> (JSON: id)</li>
   </ul>
 
+  <!-- Section describing how to test the API -->
   <h2>Testing</h2>
+
+  <!-- Instructions for testing endpoints using Postman -->
   <p>Use Postman to test the API endpoints and JSON request bodies.</p>
+
 </body>
 </html>

@@ -1,4 +1,19 @@
+# Prevent Apache configuration file from being committed.
+# .htaccess files may contain server rules, redirects,
+# or security settings that should remain local to the server.
 .htaccess
+
+# Prevent environment variable file from being committed.
+# .env typically contains sensitive information such as
+# database credentials, API keys, and secret configuration values.
 .env
+
+# Prevent phpinfo test file from being committed.
+# phpinfo.php exposes detailed server configuration
+# and should never be included in a public repository.
 phpinfo.php
+
+# Prevent local database testing script from being committed.
+# test_db.php is typically used only for verifying database
+# connectivity during development and should not be deployed.
 test_db.php
